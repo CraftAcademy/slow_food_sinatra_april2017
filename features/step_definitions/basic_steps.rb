@@ -17,3 +17,15 @@ end
 Then(/^I should be on the menu page$/) do
   expect(current_path).to eq '/menu'
 end
+
+Given(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
+  fill_in field, with: value
+end
+
+Given(/^I click on the "([^"]*)" button$/) do |value|
+  click_button(value)
+end
+
+Then(/^show me the page$/) do
+  save_and_open_page
+end
