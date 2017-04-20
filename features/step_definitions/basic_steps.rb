@@ -1,4 +1,4 @@
-Given(/^I vist the menu page$/) do
+Given(/^I visit the menu page$/) do
   visit '/menu'
 end
 
