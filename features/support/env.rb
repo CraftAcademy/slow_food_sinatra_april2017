@@ -5,9 +5,9 @@ require File.join(File.dirname(__FILE__), '..', '..', 'lib/controller.rb')
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
-require ‘pry’
-require ‘database_cleaner’
-require ‘database_cleaner/cucumber’
+require 'pry'
+require 'database_cleaner'
+require 'database_cleaner/cucumber'
 
 Capybara.app = SlowFood
 
@@ -27,7 +27,7 @@ end
 
 Warden.test_mode!
 World do
- SlowFood.new
+ SlowFoodWorld.new
  Warden::Test::Helpers
 end
 After { Warden.test_reset! }

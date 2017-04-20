@@ -1,9 +1,7 @@
-#You can implement step definitions for undefined steps with these snippets:
-
-Given(/^I am on the homepage$/) do
-  visit '/'
+Given(/^I visit the menu page$/) do
+  visit '/menu'
 end
 
-Then(/^I should be able to see welcome message$/) do
-  expect(page).to have_content('Welcome to Slow Food Restaurant')
+Then(/^I should see "([^"]*)"$/) do |content|
+  expect(page).to have_content content
 end
