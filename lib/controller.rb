@@ -83,12 +83,19 @@ class SlowFood < Sinatra::Base
     redirect '/auth/login'
   end
 
+  get '/menu' do
+    @menu = Menu.first
+    @dishes = Dish.all
+    erb :menu
+  end
+
   get '/protected' do
     env['warden'].authenticate!
 
     erb :protected
   end
 
+<<<<<<< HEAD
   get '/menu' do
     @menu = Menu.first
     binding.pry
@@ -96,4 +103,6 @@ class SlowFood < Sinatra::Base
     erb :menu
   end
 
+=======
+>>>>>>> 9bf68170a1a8a06b19093bf14dc0a1eccbdf4651
 end

@@ -10,11 +10,16 @@ Given(/^I visit the Menu page$/) do
   visit '/menu'
 end
 
+<<<<<<< HEAD
 Then(/^I should be able to see "([^"]*)"$/) do |dishes|
   expect(page).to have_content dishes
+=======
+Then(/^I should be able to see "([^"]*)"$/) do |content|
+  expect(page).to have_content content
+>>>>>>> 9bf68170a1a8a06b19093bf14dc0a1eccbdf4651
 end
 
 
 Then(/^show me the page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  save_and_open_page
 end
