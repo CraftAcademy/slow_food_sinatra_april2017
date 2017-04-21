@@ -15,6 +15,7 @@ class SlowFoodWorld
  include Capybara::DSL
  include RSpec::Expectations
  include RSpec::Matchers
+
 end
 
 DatabaseCleaner.strategy = :truncation
