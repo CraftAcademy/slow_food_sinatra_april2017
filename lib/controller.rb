@@ -95,14 +95,10 @@ class SlowFood < Sinatra::Base
     erb :protected
   end
 
-<<<<<<< HEAD
   get '/menu' do
     @menu = Menu.first
-    binding.pry
-    @dishes = Dish.all
+    @menu.dishes
     erb :menu
   end
 
-=======
->>>>>>> 9bf68170a1a8a06b19093bf14dc0a1eccbdf4651
 end

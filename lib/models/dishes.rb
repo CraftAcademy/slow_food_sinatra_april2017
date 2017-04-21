@@ -1,4 +1,3 @@
-#require './models/menu'
 class Dish
 
   include DataMapper::Resource
