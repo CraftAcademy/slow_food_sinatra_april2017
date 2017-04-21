@@ -91,6 +91,8 @@ class SlowFood < Sinatra::Base
 
   get '/menu' do
     @menu = Menu.first
+    binding.pry
+    @dishes = Dish.all
     erb :menu
   end
 
