@@ -27,6 +27,9 @@ Scenario: Business owner should be able to access protected area when logged in
   And I visit the page "/protected"
   Then I should see "Protected Page"
 
+Scenario: A user should not be able to access protected area when not logged in
+  Given I visit the page "/protected"
+  Then I should see "You must log in"
 
 Scenario: A user cannot log in using wrong credentials
   Given I visit the index page
