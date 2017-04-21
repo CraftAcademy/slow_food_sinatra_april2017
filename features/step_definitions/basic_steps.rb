@@ -20,7 +20,6 @@ end
 
 Given(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, text|
   fill_in(field, with: text)
-  #fill_in("user[username]", with: "admin")
 end
 
 Given(/^I click on the "([^"]*)" button$/) do |element|
