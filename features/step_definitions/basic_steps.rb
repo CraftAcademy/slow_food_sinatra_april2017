@@ -1,3 +1,7 @@
+Given(/^I visit the page "([^"]*)"$/) do |page|
+  visit page
+end
+
 Given(/^I visit the menu page$/) do
   visit '/menu'
 end
