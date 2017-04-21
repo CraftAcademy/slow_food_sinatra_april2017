@@ -18,12 +18,13 @@ Then(/^I should be on the menu page$/) do
   expect(current_path).to eq '/menu'
 end
 
-Given(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
-  fill_in field, with: value
+Given(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, text|
+  fill_in(field, with: text)
+  #fill_in("user[username]", with: "admin")
 end
 
-Given(/^I click on the "([^"]*)" button$/) do |value|
-  click_button(value)
+Given(/^I click on the "([^"]*)" button$/) do |element|
+  click_button(element)
 end
 
 Then(/^show me the page$/) do
