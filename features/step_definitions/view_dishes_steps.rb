@@ -10,10 +10,10 @@ Given(/^I visit the Menu page$/) do
   visit '/menu'
 end
 
-Then(/^I should be able to see "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should be able to see "([^"]*)"$/) do |content|
+  expect(page).to have_content content
 end
 
 Then(/^show me the page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  save_and_open_page
 end

@@ -1,1 +1,5 @@
 <%= @menu.name %>
+<%= @dishes.name %>
+<% @dishes.each do |dish| %>
+<%= dish[:name] %>
+<% end %>
