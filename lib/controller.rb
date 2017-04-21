@@ -85,7 +85,6 @@ class SlowFood < Sinatra::Base
 
   get '/menu' do
     @menu = Menu.first
-    @dishes = Dish.all
     erb :menu
   end
 
@@ -93,12 +92,6 @@ class SlowFood < Sinatra::Base
     env['warden'].authenticate!
 
     erb :protected
-  end
-
-  get '/menu' do
-    @menu = Menu.first
-    @menu.dishes
-    erb :menu
   end
 
 end
