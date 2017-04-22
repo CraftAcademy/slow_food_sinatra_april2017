@@ -11,7 +11,7 @@ gem 'data_mapper'
 gem 'pg'
 gem 'dm-postgres-adapter'
 gem 'pry'
-gem 'pry-byebug'
+
 
 group :development, :test do
   gem 'dotenv'
@@ -21,6 +21,5 @@ group :development, :test do
   gem 'dm-rspec'
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'pry'
   gem 'pry-byebug'
 end

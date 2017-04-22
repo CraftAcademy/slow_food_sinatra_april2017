@@ -92,7 +92,7 @@ class SlowFood < Sinatra::Base
 
   post '/order_method' do
     binding.pry
-    buy = Buy.new(params[:dish.name], params[:@menu_name])
+    buy = Buy.new(params[:name], params[:menu])
     buy.add_to_cart()
     flash[:success] = "#{buy.in_item_cart} has successfully been added to cart"
     redirect '/menu'
