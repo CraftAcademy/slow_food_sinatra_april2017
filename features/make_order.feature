@@ -6,6 +6,7 @@ Background:
   Given there is a menu called "Lunch"
   And there is a dish called "Mutton Biryani" on "Lunch"
 
+
 Scenario: Visitor should be able to add dish to cart
   Given I visit the Menu page
   And I see "Mutton Biryani" on the Menu page

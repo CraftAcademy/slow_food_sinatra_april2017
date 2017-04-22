@@ -14,3 +14,11 @@ end
 Then(/^I should see "Mutton Biryani has successfully been added to cart$/) do
   expect(page).to have_content ("Mutton Biryani has successfully been added to cart")
 end
+
+Then(/^I visit the page '\/menu' again$/) do
+  visit '/menu'
+end
+
+Then(/^I click on the button$/) do
+  
+end
