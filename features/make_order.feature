@@ -10,5 +10,5 @@ Scenario: Visitor should be able to add dish to cart
   Given I visit the Menu page
   And I see "Mutton Biryani" on the Menu page
   And I see on the Menu page Order Now button
-  And I click on the "Order Now"button
-  Then dish should be added to cart
+  And I click on the "Order Now" button
+  Then I should see "Mutton Biryani has successfully been added to cart"

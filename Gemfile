@@ -20,5 +20,7 @@ group :development, :test do
   gem 'capybara'
   gem 'dm-rspec'
   gem 'database_cleaner'
-  gem 'launchy'  
+  gem 'launchy'
+  gem 'pry'
+  gem 'pry-byebug'
 end

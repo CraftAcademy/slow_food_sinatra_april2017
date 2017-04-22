@@ -87,15 +87,17 @@ class SlowFood < Sinatra::Base
 
   get '/protected' do
     env['warden'].authenticate!
-
     erb :protected
   end
 
   post '/order_method' do
-    buy = Buy.new(params[:menu_name], params[:dish_name])
+    binding.pry
+    buy = Buy.new(params[:dish.name], params[:@menu_name])
     buy.add_to_cart()
+    flash[:success] = "#{buy.in_item_cart} has successfully been added to cart"
     redirect '/menu'
   end
+
 
 
 end

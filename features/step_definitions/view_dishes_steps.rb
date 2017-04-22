@@ -9,5 +9,6 @@ Given(/^I visit the Menu page$/) do
 end
 
 Then(/^I should be able to see "([^"]*)"$/) do |content|
+  binding.pry
   expect(page).to have_content content
 end

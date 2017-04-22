@@ -11,6 +11,6 @@ Given(/^I click on the "([^"]*)"button$/) do |button|
 end
 
 
-Then(/^dish should be added to cart$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see "Mutton Biryani has successfully been added to cart$/) do
+  expect(page).to have_content ("Mutton Biryani has successfully been added to cart")
 end
