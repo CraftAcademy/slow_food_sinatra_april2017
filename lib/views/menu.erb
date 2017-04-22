@@ -1,4 +1,11 @@
 <%= @menu.name %> <br>
-<% @menu.dishes.each do |dish| %> <br>
-  <%= dish[:name] %>
+<% @category.each do |cat| %>
+  <ul>
+    <%= cat.category_name %>
+    <% cat.dishes.each do |dish| %> <br>
+      <li>
+        <%= dish[:name] %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
