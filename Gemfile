@@ -10,7 +10,9 @@ gem 'shotgun', '0.9.1'
 gem 'data_mapper'
 gem 'pg'
 gem 'dm-postgres-adapter'
+
 gem 'pry'
+
 
 
 group :development, :test do
