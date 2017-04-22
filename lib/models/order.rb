@@ -1,4 +1,4 @@
-class OrderItem
+class Order
 
   include DataMapper::Resource
 
@@ -6,7 +6,6 @@ class OrderItem
 
 
 
-  belongs_to :dish,  key: true
-  belongs_to :order
+  has n, :OrderItems
 
 end
