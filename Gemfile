@@ -10,8 +10,6 @@ gem 'shotgun', '0.9.1'
 gem 'data_mapper'
 gem 'pg'
 gem 'dm-postgres-adapter'
-gem 'pry'
-gem 'pry-byebug'
 
 group :development, :test do
   gem 'dotenv'
