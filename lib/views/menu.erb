@@ -1,9 +1,9 @@
 <%= @menu.name %> <br>
 <% @menu.dishes.each do |dish| %> <br>
   <%= dish[:name] %>
+  <form method="POST" action="/order_method">
+      <input type="hidden" name="menu" value= @menu.name>
+      <input type="hidden" name="dish" value=dish[:name]>
+      <button type="button" type='submit' value='Add To Cart'>Order Now</button>
+  </form>  
 <% end %>
-<button type="button">Order Now</button>
-
-<form method="post" action="/runMethod">
-    <button type="button" type='submit' value='Add To Cart'>Order Now</button>
-</form>

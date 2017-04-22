@@ -8,4 +8,5 @@ class Dish
 
   belongs_to :menu,  key: true
   has n, :order_items
+
 end

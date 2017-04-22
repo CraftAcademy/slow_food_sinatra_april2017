@@ -7,9 +7,6 @@ require 'pry'
 
 
 
-
-
-
 class SlowFood < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
@@ -93,5 +90,12 @@ class SlowFood < Sinatra::Base
 
     erb :protected
   end
+
+  post '/order_method' do
+    buy = Buy.new(params[:menu_name], params[:dish_name])
+    buy.add_to_cart()
+    redirect '/menu'
+  end
+
 
 end
