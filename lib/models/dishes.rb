@@ -7,5 +7,6 @@ class Dish
   property :menu_id, Serial, key: true
 
   belongs_to :menu,  key: true
+  has n, :order_items
 
 end

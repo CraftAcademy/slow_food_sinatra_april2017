@@ -1,4 +1,15 @@
 <%= @menu.name %> <br>
-<% @menu.dishes.each do |dish| %> <br>
-  <%= dish[:name] %>
+<% @menu.dishes.each do |dish| %>
+  <%= dish.name %>
+  <form method="post" action="/order_method">
+      <input type="hidden" name="menu" value="<%= @menu.name %>" >
+      <input type="hidden" name="dish" value="<%= dish.name %>" >
+      <input type="submit" value='Order Now'>
+  </form>
 <% end %>
+
+<% @orderid %>
+<form method="post" action="/view_cart">
+    <input type="hidden" name="order" value= "<%= @orderid %>" >
+    <input type="submit" value='Cart'>
+</form>

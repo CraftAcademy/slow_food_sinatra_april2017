@@ -7,9 +7,6 @@ require 'pry'
 
 
 
-
-
-
 class SlowFood < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
@@ -90,8 +87,26 @@ class SlowFood < Sinatra::Base
 
   get '/protected' do
     env['warden'].authenticate!
-
     erb :protected
   end
+
+  post '/order_method' do
+    session[:cart] ||= []
+    @dish_name = params[:dish]
+    dish = Dish.first(@dish_name)
+    session[:cart] << {
+      dish: @dish_name,
+      dish_id: dish.id,
+      menu_id: dish.menu_id
+    }
+    session[:cart].each do |item|
+      if item[:dish] == @dish_name
+         flash[:success] = "#{@dish_name} has successfully been added to cart"
+         redirect '/menu'
+         flash.discard
+      end
+    end
+  end
+
 
 end
