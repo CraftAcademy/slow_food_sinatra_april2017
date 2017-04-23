@@ -91,13 +91,20 @@ class SlowFood < Sinatra::Base
   end
 
   post '/order_method' do
-    @order = Order.create
-    dish = Dish.first(params[:dish])
-    @order.order_items.create(dish_id: dish.id, dish_menu_id: dish.menu_id)
-    if @order.save
-      @@orderid = @order.id
-      flash[:success] = "#{dish.name} has successfully been added to cart"
-      redirect '/menu'
+    session[:cart] ||= []
+    @dish_name = params[:dish]
+    dish = Dish.first(@dish_name)
+    session[:cart] << {
+      dish: @dish_name,
+      dish_id: dish.id,
+      menu_id: dish.menu_id
+    }
+    session[:cart].each do |item|
+      if item[:dish] == @dish_name
+         flash[:success] = "#{@dish_name} has successfully been added to cart"
+         redirect '/menu'
+         flash.discard
+      end
     end
   end
 
