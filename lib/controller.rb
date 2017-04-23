@@ -108,13 +108,5 @@ class SlowFood < Sinatra::Base
     end
   end
 
-  post '/view_cart' do
-    redirect '/view_cart'
-  end
-
-  get '/view_cart' do
-    @items = OrderItem.first(order_id: @@orderid)
-    erb :cart
-  end
 
 end
