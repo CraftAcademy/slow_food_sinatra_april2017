@@ -95,8 +95,19 @@ class SlowFood < Sinatra::Base
     dish = Dish.first(params[:dish])
     @order.order_items.create(dish_id: dish.id, dish_menu_id: dish.menu_id)
     if @order.save
+      @@orderid = @order.id
       flash[:success] = "#{dish.name} has successfully been added to cart"
       redirect '/menu'
     end
   end
+
+  post '/view_cart' do
+    redirect '/view_cart'
+  end
+
+  get '/view_cart' do
+    @items = OrderItem.first(order_id: @@orderid)
+    erb :cart
+  end
+
 end
